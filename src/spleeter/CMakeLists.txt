@@ -5,9 +5,15 @@ add_library(spleeter
   spleeter.h
 )
 
+find_package(PkgConfig REQUIRED)
+pkg_search_module(EIGEN REQUIRED eigen3 IMPORTED_TARGET)
+
+target_link_libraries(spleeter ${EIGEN_LIBRARIES})
+target_include_directories(spleeter PUBLIC ${EIGEN_INCLUDE_DIRS})
+target_compile_options(spleeter PUBLIC ${EIGEN_CFLAGS_OTHER})
+
 target_link_libraries(spleeter
   spleeter_common
-  Eigen3::Eigen
 )
 
 install(TARGETS spleeter

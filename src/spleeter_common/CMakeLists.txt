@@ -17,10 +17,10 @@ target_include_directories(spleeter_common PUBLIC ${EIGEN_INCLUDE_DIRS} ${TENSOR
 target_compile_options(spleeter_common PUBLIC ${EIGEN_CFLAGS_OTHER} ${TENSORFLOW_CFLAGS_OTHER})
 
 
-target_link_libraries(spleeter_common
-  tensorflow
-  Eigen3::Eigen
-)
+# target_link_libraries(spleeter_common
+#   tensorflow
+#   Eigen3::Eigen
+# )
 
 install(TARGETS spleeter_common
   RUNTIME DESTINATION bin

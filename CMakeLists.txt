@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(spleeter++)
+project(spleeterpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -36,13 +36,13 @@ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
 if (${spleeter_regenerate_models})
   include(add_spleeter)
 else()
-  include(add_spleeter_models)
+  include(add_spleeter_models)  # TODO
 endif()
-include(add_eigen)
-include(add_tensorflow)
-if (${spleeter_enable_filter})
-  include(add_rtff)
-endif()
+# include(add_eigen)
+# include(add_tensorflow)
+# if (${spleeter_enable_filter})
+#   include(add_rtff)
+# endif()
 # --
 if (WIN32)
   include(runtime)
